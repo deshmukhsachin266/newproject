@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/batchvw.css' %}">
+    <style>
+        header img {
+    height: 120px;
+    width: 250px;
+}
+    header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+header li a:hover {
+    color: rgb(15, 175, 214);
+    transition: .3s;
+}
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="{% static 'img/logo.png' %}" alt="logo">
+        <nav>
+          <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'trainer' %}">TRAINER</a></li>
+            <li><a href="{% url 'profile' %}">PROFILE</a></li>
+            <li><a href="{% url 'batchdisplay' %}">BATCHES</a></li>
+            <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+          </ul>
+        </nav>
+    </header>
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>Bid</td>
+                <td>{{form.bid}}
+                </td>
+            </tr>
+            <tr>
+                <td>Trainer</td>
+                <td>{{form.Trainer}}
+                </td>
+            </tr>
+            <tr>
+                <td>Subject</td>
+                <td>{{form.subject}}</td>
+            </tr>
+            <tr>
+                <td>Time</td>
+                <td>{{form.Time}}
+                </td>
+            </tr>
+            <tr>
+                <td>Room No</td>
+                <td>{{form.room_no}}
+                </td>
+            </tr>
+            <tr>
+                <td> Mode</td>
+                <td>{{form.mode}}
+                </td>
+            </tr>
+        </table>
+        <button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Submit
+        </button>
+    </form>
+</body>
+</html>

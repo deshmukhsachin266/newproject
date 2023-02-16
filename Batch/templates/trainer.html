@@ -1,0 +1,109 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/trainer.css' %}">
+    <style>
+        header img {
+    height: 120px;
+    width: 250px;
+}
+    header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+header li a:hover {
+    color: rgb(15, 175, 214);
+    transition: .3s;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{% static 'img/logo.png' %}" alt="logo">
+        <nav>
+          <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'profile' %}">PROFILE</a></li>
+            <li><a href="{% url 'batchVW' %}">CREATE BATCH</a></li>
+            <li><a href="{% url 'batchdisplay' %}">BATCHES</a></li>
+            <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+          </ul>
+        </nav>
+    </header>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <table>
+            <tr>
+                <td>Tid</td>
+                <td>{{form.tid}}
+                </td>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <td>{{form.name}}
+                </td>
+            </tr>
+            <tr>
+                <td>Salary</td>
+                <td>{{form.sal}}</td>
+            </tr>
+            <tr>
+                <td>Work Exp</td>
+                <td>{{form.work_exp}}
+                </td>
+            </tr>
+            <tr>
+                <td>Date of Join</td>
+                <td>{{form.Date_of_join}}
+                </td>
+            </tr>
+            <tr>
+                <td> Photo</td>
+                <td>{{form.photo}}
+                </td>
+            </tr>
+            <tr>
+                <td> Subject</td>
+                <td>{{form.subject}}
+                </td>
+            </tr>
+        </table>
+        
+        
+        <button>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            Create
+    </button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,40 @@
+header img {
+    height: 120px;
+    width: 250px;
+}
+body {
+    height: 125vh;
+    background: linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6));
+    font-family: sans-serif;
+    margin-top: 80px;
+    padding: 30px;
+}
+header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+header li a:hover {
+    color: rgb(15, 175, 214);
+    transition: .3s;
+}

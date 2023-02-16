@@ -1,0 +1,100 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/batchdisplay.css' %}">
+    <style>
+    body {
+    height: 125vh;
+    background: linear-gradient(#141e30,#243b55);
+    font-family: sans-serif;
+    margin-top: 80px;
+    padding: 30px;
+}
+    
+        header img {
+    height: 120px;
+    width: 250px;
+}
+    header {
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 25px 0 black;
+}
+
+header * {
+    display: inline;
+}
+
+header li {
+    margin: 20px;
+}
+
+header li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+header li a:hover {
+    color: rgb(15, 175, 214);
+    transition: .3s;
+}
+div{
+    display:inline-block;
+    margin-left: 30%;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,.5);
+    color: azure;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    border-radius: 10px;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <img src="{% static 'img/logo.png' %}" alt="logo">
+        <nav>
+          <ul>
+            <li><a href="{% url 'home' %}">HOME</a></li>
+            <li><a href="{% url 'profile' %}">PROFILE</a></li>
+            <li><a href="{% url 'batchVW' %}">CREATE BATCH</a></li>
+            <li><a href="{% url 'trainer' %}">TRAINER</a></li>
+            <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+          </ul>
+        </nav>
+    </header>
+    <br><br>
+    <br><br>
+    <br><br>
+        {% for msg in messages %}
+        <h2>{{msg}}</h2>
+        {% endfor %}
+        {% for i in data %}
+        <div>
+            <h1>Batch id :- {{i.bid}}</h1>
+            <h1>Trainer :- {{i.Trainer}}</h1>
+            <h1>subject :- {{i.subject}}</h1>
+            <h1>Time :- {{i.Time}}</h1>
+            <h1>Room NO :- {{i.room_no}}</h1>
+            <h1>Mode :- {{i.mode}}</h1>
+        </div>
+        {% endfor %}
+
+        
+</body>
+</html>

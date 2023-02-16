@@ -1,0 +1,12 @@
+img{
+    height: 150px;
+    width: 200px;
+}
+body {
+    height: 125vh;
+    color: white;
+    background: linear-gradient(#141e30, #243b55);
+    font-family: sans-serif;
+    margin-top: 0px;
+    padding: 0px;
+}

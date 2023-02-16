@@ -1,0 +1,37 @@
+{% load static  %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+  </head>
+  <body>
+    <header>
+      <img src="{% static 'img/logo.png' %}" alt="logo">
+      <nav>
+        <ul>
+          <li><a href="{% url 'trainer' %}">TRAINER</a></li>
+          <li><a href="{% url 'profile' %}">PROFILE</a></li>
+          <li><a href="{% url 'batchVW' %}">CREATE BATCH</a></li>
+          <li><a href="{% url 'batchdisplay' %}">BATCHES</a></li>
+          <li><a href="{% url 'logout' %}">LOGOUT</a></li>
+        </ul>
+      </nav>
+  </header>
+  <div>
+    PySpiders is the world's ace software course training
+    organization with an aim to bridge the gap between the demands
+    of the industry and the curriculum of educational institutions.
+   
+    With centers across the Globe, the institute is a platform where
+    young minds are given the opportunity to build successful
+    careers.
+
+    ”PySpiders is a place where businesses find talent and dreams
+    take flight.&quot;
+  </div>
+  </body>
+</html>
